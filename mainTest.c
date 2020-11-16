@@ -61,19 +61,20 @@ void test_i2c(){
     //SCL
     _gpio_setup_pin_af(RCC_GPIOB, GPIOB,GPIO6, GPIO_AF4);
     //SDA
-    _gpio_setup_pin_af(RCC_GPIOA, GPIOA,GPIO14, GPIO_AF4);
+    _gpio_setup_pin_af(RCC_GPIOB, GPIOB,GPIO7, GPIO_AF4);
+
+    //LED
+    _gpio_setup_pin(RCC_GPIOB,GPIOB,GPIO3,GPIO_MODE_OUTPUT);     
 
     i2c_setup();
     uint8_t msg = 0xab;
     uint8_t* read;
-    
-    i2c_transfer7(I2C1,
-    		0x52<<1,
-    		&msg,
-    		sizeof(msg),
-    		read,
-    		0 
-    	);
+
+    while(1){
+        gpio_toggle(GPIOB,GPIO3);
+        //i2c_transfer7(I2C1, 0x52<<1, &msg, sizeof(msg), read, 0);
+        delay_ms(1000);
+	}
 }
 
 void test_motor(){

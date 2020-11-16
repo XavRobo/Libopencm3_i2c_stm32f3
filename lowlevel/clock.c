@@ -1,8 +1,5 @@
 #include "clock.h"
 
-#include <libopencm3/cm3/systick.h>
-#include <libopencm3/stm32/rcc.h>
-
 void clock_setup() {
 	/* clock configuration*/
 	rcc_clock_setup_hsi(&rcc_hsi_configs[RCC_CLOCK_HSI_64MHZ]);

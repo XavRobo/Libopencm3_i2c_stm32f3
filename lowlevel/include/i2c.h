@@ -4,6 +4,7 @@
 // From Antonin
 
 #include <libopencm3/stm32/i2c.h>
+#include <libopencm3/stm32/rcc.h>
 
 #define I2C1_CLK_MHZ    8
 #define I2C_MAX_NBYTES 255

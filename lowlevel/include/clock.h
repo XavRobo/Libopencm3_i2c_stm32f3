@@ -17,6 +17,9 @@
 
 #include <stdint.h>
 
+#include <libopencm3/cm3/systick.h>
+#include <libopencm3/stm32/rcc.h>
+
 
 /**
  * @brief This function setup the system clock
