@@ -72,7 +72,7 @@ void test_i2c(){
 
     while(1){
         gpio_toggle(GPIOB,GPIO3);
-        //i2c_transfer7(I2C1, 0x52<<1, &msg, sizeof(msg), read, 0);
+        i2c_transfer7(I2C1, 0x52<<1, &msg, sizeof(msg), read, 0);
         delay_ms(1000);
 	}
 }
